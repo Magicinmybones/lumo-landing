@@ -4,6 +4,8 @@
 !/assets/
 /assets/*
 !/assets/style.css
+!/assets/entry.css
+!/assets/entry.js
 !/assets/instrument-sans.woff2
 !/assets/instrument-serif-italic.woff2
 !/assets/hero-photo.jpg

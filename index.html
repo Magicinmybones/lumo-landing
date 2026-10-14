@@ -5,7 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#D7E99C">
 <title>Lumo — Banking for freelance life</title>
+<script>
+  if (Element.prototype.animate && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('entry-pending');
+    window.lumoEntryAnimations = [];
+    window.finishLumoEntry = function () {
+      if (!document.documentElement.classList.contains('entry-pending')) return;
+      document.documentElement.classList.remove('entry-pending');
+      window.lumoEntryAnimations.forEach(animation => animation.cancel());
+      window.lumoEntryMedia?.removeEventListener('change', window.lumoEntryMotionHandler);
+      clearTimeout(window.lumoEntryFallback);
+    };
+    window.lumoEntryFallback = setTimeout(window.finishLumoEntry, 3500);
+  }
+</script>
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/entry.css">
+<script src="assets/entry.js" defer></script>
 </head>
 <body>
 <div class="page">
