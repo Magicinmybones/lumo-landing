@@ -1,0 +1,9 @@
+*
+!/.gitignore
+!/index.html
+!/assets/
+/assets/*
+!/assets/style.css
+!/assets/instrument-sans.woff2
+!/assets/instrument-serif-italic.woff2
+!/assets/hero-photo.jpg
